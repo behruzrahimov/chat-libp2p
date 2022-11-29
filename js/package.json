@@ -1,0 +1,27 @@
+{
+  "name": "js",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-listener": "node listener.js",
+    "start-dialer": "node dealer.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chainsafe/libp2p-noise": "^10.2.0",
+    "@libp2p/mplex": "^7.0.5",
+    "@libp2p/peer-id-factory": "^1.0.19",
+    "@libp2p/tcp": "^6.0.4",
+    "@libp2p/websockets": "^5.0.0",
+    "@multiformats/multiaddr": "^11.0.7",
+    "@nodeutils/defaults-deep": "^1.1.0",
+    "it-length-prefixed": "^8.0.3",
+    "it-map": "^2.0.0",
+    "it-pipe": "^2.0.4",
+    "libp2p": "^0.40.0"
+  }
+}
