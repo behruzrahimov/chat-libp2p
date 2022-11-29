@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import { multiaddr } from "@multiformats/multiaddr";
 import { createLibp2p } from "./libp2p.js";
 import { stdinToStream, streamToConsole } from "./stream.js";
@@ -13,7 +11,6 @@ async function run() {
     createFromJSON(peerIdListenerJson),
   ]);
 
-  // Create a new libp2p node on localhost with a randomly chosen port
   const nodeDialer = await createLibp2p({
     peerId: idDialer,
     addresses: {
@@ -21,16 +18,13 @@ async function run() {
     },
   });
 
-  // Start the libp2p host
   await nodeDialer.start();
 
-  // Output this node's address
   console.log("Dialer ready, listening on:");
   nodeDialer.getMultiaddrs().forEach((ma) => {
     console.log(ma.toString());
   });
 
-  // Dial to the remote peer (the "listener")
   const listenerMa = multiaddr(
     `/ip4/127.0.0.1/tcp/10333/p2p/${idListener.toString()}`
   );
@@ -39,9 +33,7 @@ async function run() {
   console.log("Dialer dialed to listener on protocol: /chat/1.0.0");
   console.log("Type a message and see what happens");
 
-  // Send stdin to the stream
   stdinToStream(stream);
-  // Read the stream and output to console
   streamToConsole(stream);
 }
 
