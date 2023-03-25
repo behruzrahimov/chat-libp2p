@@ -22,6 +22,7 @@
     "it-length-prefixed": "^8.0.3",
     "it-map": "^2.0.0",
     "it-pipe": "^2.0.4",
-    "libp2p": "^0.40.0"
+    "libp2p": "^0.40.0",
+    "prettier": "^2.8.7"
   }
 }
